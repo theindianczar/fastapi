@@ -4,6 +4,8 @@ on: [push,pull_request]
 
 jobs:
   job1:
+    env:  
+      DATABASE_HOSTNAME: localhost
     runs-on:  ubuntu-latest
     steps:
       - name: pulling git repo

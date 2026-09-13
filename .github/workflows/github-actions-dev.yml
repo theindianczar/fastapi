@@ -4,8 +4,11 @@ on: [push,pull_request]
 
 jobs:
   job1:
-    env:  
-      DATABASE_HOSTNAME: localhost
+    environment:
+      name: TESTING
+    env:
+      DATABASE_HOSTNAME: ${{secrets.TEST_SECRET}}
+      DATABASE_PORT: ${{secrets.DATABASE_PORT}}
     runs-on:  ubuntu-latest
     steps:
       - name: pulling git repo
